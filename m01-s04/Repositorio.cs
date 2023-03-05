@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,17 +17,15 @@ namespace m01_s04
             if (parametro.Tipo == "Refrigerante")
             {
                 Refrigerante refrigerante = new Refrigerante();
-                refrigerante.ID = parametro.ID;
                 refrigerante.Tipo = parametro.Tipo;
-                refrigerante.Vidro = true;
+                refrigerante.Vidro = bool.Parse(Console.ReadLine());
                 AdicionarRefrigerante(refrigerante);
             }
             else if (parametro.Tipo == "Suco")
             {
                 Suco suco = new Suco();
-                suco.ID = parametro.ID;
                 suco.Tipo = parametro.Tipo;
-                suco.TipoCaixa = "Tetra Park";
+                suco.TipoCaixa = Console.ReadLine();
                 AdicionarSuco(suco);
             }
             else
@@ -44,7 +43,28 @@ namespace m01_s04
             ListaSucos.Add(suco);
             ListaBebidas.Add(suco);
         }
-        public static void AlterarBebida(Bebida bebida) { }
+        public static void AlterarBebida(Bebida parametro)
+        {
+            Bebida bebida = ListaBebidas.Find(idFind => idFind.ID == parametro.ID);
+            if (bebida == null) return;
+            if (bebida is Refrigerante refrigerante)
+            {
+                refrigerante.ID = parametro.ID;
+                refrigerante.Tipo = parametro.Tipo;
+                refrigerante.Vidro = bool.Parse(Console.ReadLine());
+            }
+            else if (bebida is Suco suco)
+            {
+                suco.ID = parametro.ID;
+                suco.Tipo = parametro.Tipo;
+                suco.TipoCaixa = Console.ReadLine();
+            }
+            else
+            {
+                bebida.ID = parametro.ID;
+                bebida.Tipo = parametro.Tipo;
+            }
+        }
         public static void ExcluirBebida(int id)
         {
             Bebida bebida = ListaBebidas.Find(idFind => idFind.ID == id);
