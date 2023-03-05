@@ -34,20 +34,35 @@ namespace m01_s04
                 ListaBebidas.Add(parametro);
             }
         }
-        public static void AdicionarSuco(Suco suco)
-        {
-            ListaSucos.Add(suco);
-            ListaBebidas.Add(suco);
-        }
         public static void AdicionarRefrigerante(Refrigerante refrigerante)
         {
             ListaRefrigerantes.Add(refrigerante);
             ListaBebidas.Add(refrigerante);
         }
+        public static void AdicionarSuco(Suco suco)
+        {
+            ListaSucos.Add(suco);
+            ListaBebidas.Add(suco);
+        }
         public static void AlterarBebida(Bebida bebida) { }
         public static void ExcluirBebida(int id)
         {
-
+            Bebida bebida = ListaBebidas.Find(idFind => idFind.ID == id);
+            if (bebida == null) return;
+            if (bebida is Refrigerante refrigerante)
+            {
+                ListaBebidas.Remove(refrigerante);
+                ListaRefrigerantes.Remove(refrigerante);
+            }
+            else if (bebida is Suco suco)
+            {
+                ListaBebidas.Remove(suco);
+                ListaSucos.Remove(suco);
+            }
+            else
+            {
+                ListaBebidas.Remove(bebida);
+            }
         }
         public static void ListarBebida()
         {
