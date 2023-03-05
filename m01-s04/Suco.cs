@@ -9,21 +9,14 @@ namespace m01_s04
     public class Suco : Bebida
     {
         public string TipoCaixa { get; set; }
-        public Suco(string tipoCaixa, int id, string tipo, decimal miliLitro, string nomeBebida, decimal valorCompra) : base(id, tipo, miliLitro, nomeBebida, valorCompra)
+        public Suco() : base() { }
+        public Suco(int id, string tipo, string tipoCaixa) : base(id, tipo)
         {
-            TipoCaixa = tipoCaixa;
-            ID = id;
-            Tipo = tipo;
-            MiliLitro = miliLitro;
-            NomeBebida = nomeBebida;
-            ValorCompra = valorCompra;
-
+            this.TipoCaixa = tipoCaixa;
         }
-        public void ImprimirDados()
+        public void ImprimirSuco()
         {
-            Console.WriteLine("Produto ID: {0}", ID);
-            Console.WriteLine("Tipo: {0}", TipoCaixa);
-            Console.WriteLine("Volume: {0} ml", MiliLitro);
+            Console.WriteLine("ID: {0} Tipo: {1} TipoCaixa: {2}", ID, Tipo, TipoCaixa);
         }
     }
 }

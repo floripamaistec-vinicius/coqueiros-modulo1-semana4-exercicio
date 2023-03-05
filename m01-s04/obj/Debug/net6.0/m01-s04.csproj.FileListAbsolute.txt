@@ -1,0 +1,15 @@
+D:\floripamaistec\semana-04\m01-s04\bin\Debug\net6.0\m01-s04.exe
+D:\floripamaistec\semana-04\m01-s04\bin\Debug\net6.0\m01-s04.deps.json
+D:\floripamaistec\semana-04\m01-s04\bin\Debug\net6.0\m01-s04.runtimeconfig.json
+D:\floripamaistec\semana-04\m01-s04\bin\Debug\net6.0\m01-s04.dll
+D:\floripamaistec\semana-04\m01-s04\bin\Debug\net6.0\m01-s04.pdb
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.csproj.AssemblyReference.cache
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.GeneratedMSBuildEditorConfig.editorconfig
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.AssemblyInfoInputs.cache
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.AssemblyInfo.cs
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.csproj.CoreCompileInputs.cache
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.dll
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\refint\m01-s04.dll
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.pdb
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\m01-s04.genruntimeconfig.cache
+D:\floripamaistec\semana-04\m01-s04\obj\Debug\net6.0\ref\m01-s04.dll

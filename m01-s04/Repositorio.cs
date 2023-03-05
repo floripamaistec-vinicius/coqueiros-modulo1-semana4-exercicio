@@ -6,51 +6,55 @@ using System.Threading.Tasks;
 
 namespace m01_s04
 {
-    public static class Repositorio
+    public class Repositorio
     {
-        public static List<Bebida> ListaDeBebidas { get; set; }
-        public static List<Suco> ListaDeSucos { get; set; }
-        public static List<Refrigerante> ListaDeRefrigerantes { get; set; }
+        public static List<Bebida> ListaBebidas = new List<Bebida>();
+        public static List<Refrigerante> ListaRefrigerantes = new List<Refrigerante>();
+        public static List<Suco> ListaSucos = new List<Suco>();
+        public static void AdicionarBebida(Bebida parametro)
+        {
+            if (parametro.Tipo == "Refrigerante")
+            {
+                Refrigerante refrigerante = new Refrigerante();
+                refrigerante.ID = parametro.ID;
+                refrigerante.Tipo = parametro.Tipo;
+                refrigerante.Vidro = true;
+                AdicionarRefrigerante(refrigerante);
+            }
+            else if (parametro.Tipo == "Suco")
+            {
+                Suco suco = new Suco();
+                suco.ID = parametro.ID;
+                suco.Tipo = parametro.Tipo;
+                suco.TipoCaixa = "Tetra Park";
+                AdicionarSuco(suco);
+            }
+            else
+            {
+                ListaBebidas.Add(parametro);
+            }
+        }
         public static void AdicionarSuco(Suco suco)
         {
-            ListaDeSucos.Add(suco);
+            ListaSucos.Add(suco);
+            ListaBebidas.Add(suco);
         }
         public static void AdicionarRefrigerante(Refrigerante refrigerante)
         {
-            ListaDeRefrigerantes.Add(refrigerante);
+            ListaRefrigerantes.Add(refrigerante);
+            ListaBebidas.Add(refrigerante);
         }
-        public static void AdicionarBebida(Bebida bebida)
+        public static void AlterarBebida(Bebida bebida) { }
+        public static void ExcluirBebida(int id)
         {
-            ListaDeBebidas.Add(bebida);
+
         }
-        public static void AlterarBebida(Bebida bebida)
+        public static void ListarBebida()
         {
-            AlterarNomeBebida(bebida);
-            AlterarMiliLitro(bebida);
-            AlterarPreco(bebida);
-        }
-        public static Bebida PesquisarBebida(Bebida bebida)
-        {
-            foreach (Bebida item in ListaDeBebidas.Where(listaEmMemoria => listaEmMemoria.ID == bebida.ID))
+            foreach(Bebida bebida in ListaBebidas)
             {
-                return item;
+                Console.WriteLine(bebida.ToString());
             }
-            return null;
-        }
-        public static void AlterarNomeBebida(Bebida bebida)
-        {
-            Console.WriteLine("Nome da Bebida:");
-            bebida.NomeBebida = Console.ReadLine();
-        }
-        public static void AlterarMiliLitro(Bebida bebida)
-        {
-            Console.WriteLine("Nome da Bebida:");
-            bebida.MiliLitro = decimal.Parse(Console.ReadLine());
-        }
-        public static void AlterarPreco(Bebida bebida)
-        {
-            Console.WriteLine("Nome da Bebida:");
-            bebida.MiliLitro = decimal.Parse(Console.ReadLine());
         }
     }
 }

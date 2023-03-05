@@ -9,29 +9,19 @@ namespace m01_s04
     public class Refrigerante : Bebida
     {
         public bool Vidro { get; set; }
-        public Refrigerante(bool vidro, int id, string tipo, decimal miliLitro, string nomeBebida, decimal valorCompra) : base(id, tipo, miliLitro, nomeBebida, valorCompra)
+        public Refrigerante() : base() { }
+        public Refrigerante(int ID, string Tipo) : this()
         {
-            Vidro = vidro;
-            ID = id;
-            Tipo = tipo;
-            MiliLitro = miliLitro;
-            NomeBebida = nomeBebida;
-            ValorCompra = valorCompra;
+            ID = ID;
+            Tipo = Tipo;
         }
-        public void ImprimirDados()
+        public Refrigerante(int id, string tipo, bool vidro) : base(id, tipo)
         {
-            if (Vidro == true)
-            {
-                Console.WriteLine("Produto ID: {0}", ID);
-                Console.WriteLine("Volume: {0} ml", MiliLitro);
-                Console.WriteLine("Garrafa: Vidro");
-            }
-            else
-            {
-                Console.WriteLine("Produto ID: {0}", ID);
-                Console.WriteLine("Volume: {0} ml", MiliLitro);
-                Console.WriteLine("Garrafa: PET");
-            }
+            this.Vidro = vidro;
+        }
+        public void ImprimirRefrigerante()
+        {
+            Console.WriteLine("ID: {0} Tipo: {1} Vidro: {2}", ID, Tipo, Vidro);
         }
     }
 }
